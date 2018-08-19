@@ -1,0 +1,8 @@
+@media (min-width: 992px){
+.intro .col-md-offset-3 {
+   margin-left: 25%;
+ }
+.intro  .col-md-6 {
+  width: 50%;
+  }
+}

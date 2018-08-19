@@ -1,0 +1,16 @@
+@media (max-width: 767px){
+  .fixed-top button{
+    position: fixed;
+    top: 0;
+    left: 5%;
+    /* right: 0; */
+  }
+.navbar-nav {
+    padding-top: 55px;
+
+  }
+  .navbar-nav li a{
+    float: left;
+    margin-left: -120px;
+  }
+}

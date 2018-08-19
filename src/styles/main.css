@@ -1,0 +1,457 @@
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 24px;
+}
+p{
+    font-size: 20px;
+}
+hr{
+    margin: 30px 0;
+}
+body {
+    font-family: 'Old Standard TT',serif;
+    background-color: #F8F8F8;
+}
+.col-12{
+    padding: 0 !important;
+}
+.page-center{
+    padding: 0 250px;
+}
+.line-center{
+    padding: 0 200px;
+}
+.line-center hr{
+    margin: 20px 0;
+}
+.page-border{
+    padding: 0 30px 0 30px;
+}
+.button {
+    background-color: #000;
+    border: none;
+    color: white;
+    padding: 7px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 15px 2px;
+    cursor: pointer;
+}
+ .bg-image{
+    background: url(./mainbanner.gif);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    display: block;
+  }
+.title-text{
+    position: relative;
+    padding-top: 150px;
+    color: #fff;
+    font-size: 36px;
+    text-align: left;
+}
+/*
+################
+ navbar styles
+################
+*/
+/* navbar styles */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.navbar-inverse{
+    background-color: #000000;
+    background-image: none;
+}
+.navbar-inverse .navbar-nav li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.navbar li{
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* end of navbar styles */
+
+/*
+################
+ Footer styles
+################
+*/
+.footer{
+    padding-top: 40px;
+    margin-top: 50px;
+    background-color: #eee;
+}
+.footer p{
+    text-align: left;
+    font-size: 18px;
+    line-height: 1;
+}
+.footer h4{
+    text-align: left;
+    font-size: 22px;
+}
+.footer .col-md-6:nth-child(2) p{
+    text-align: right;
+}
+.footer .copyright{
+    background-color: #D8D8D8;
+}
+.footer .copyright p{
+    padding: 20px 0 0 0;
+    text-align: center;
+}
+/* end of footer styles */
+
+/*
+################
+ Home page styles
+################
+*/
+/* Home page styles */
+.home-page .bg-image{
+    background: url(./mainbanner.gif);
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    display: block;
+  }
+.home-page .title-text{
+    position: relative;
+    padding-top: 200px;
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+}
+.intro-text h2{
+    font-size: 22px;
+    padding: 75px 0 20px 0;
+}
+.intro-text p{
+    font-size: 18px;
+}
+
+.intro-text img {
+    width: 35%;
+    height: auto;
+    margin: auto;
+    clear: none;
+    font-size: 18px;
+    padding:50px;
+}
+.project-grid h1{
+    text-align: center;
+    font-size: 30px;
+    padding: 50px 0 50px 0;
+}
+
+/* hexogon grid */
+.hex-grid{
+  padding-left: 155px;
+  padding-bottom: 100px;
+}
+.hex-grid .outerclip {
+    overflow: hidden;
+    display: inline-block;
+    height: 200px;
+    margin-right: 40px;
+}
+.hex-grid .innerclip {
+    overflow: hidden;
+    display: inline-block;
+    height: 200px;
+    margin-right: 70px;
+}
+.hex-grid .outerclip:hover {
+    -ms-transform: scale(1.05,1.05); /* IE 9 */
+    -webkit-transform: scale(1.05,1.05); /* Safari */
+    transform: scale(1.05,1.05); /* Standard syntax */
+    transition-duration: 2s;
+}
+.hex-grid  img {
+    width: 200px;
+}
+.hex-grid .row {
+    text-align: center;
+    margin-bottom: -113px;
+}
+.hex-grid .row:nth-child(even) {
+    margin-left:140px;
+}
+.hex-grid p{
+    color: #fff;
+    font-size: 20px;
+    margin-top: -100px;
+}
+/* end of hexogon grid */
+/* end of Home page styles */
+
+/*
+################
+ Add project styles
+################
+*/
+.todoListMain .theList {
+    list-style: square;
+    padding-left: 45px;
+    width: 250px;
+}
+.todoListMain .theList li {
+    color: #333;
+    list-style: square;
+    text-align: left;
+}
+.add-projec-title1 h1{
+    padding: 75px 0 30px 0;
+}
+.add-projec-title h1{
+    padding: 0px 0 0px 0;
+}
+.add-project p{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+.add-project hr{
+    margin-top: 20px;
+}
+.add-project form{
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: remy(380px);
+    text-align: left;
+    font-size: 16px;
+}
+.add-project .milestones{
+    padding-top: 30px;
+}
+.add-project label{
+    font-weight: 400;
+}
+.add-project input{
+    width: 400px;
+    margin: 0px 20px;
+}
+.add-project select{
+    width: 400px;
+    height: 30px;
+    margin: 0 20px;
+    border: 0;
+    outline: 1px solid #ccc;
+    background-color: #fff;
+}
+/* .dropdown-color{
+  background: red;
+} */
+.add-project textarea{
+    width: 400px;
+    margin: 0 20px;
+  /* outline: 1px solid #ccc;; */
+}
+.add-project .checkbox form{
+    margin: 0em;
+}
+.add-project h3{
+    font-size: 24px;
+    font-weight: 500;
+}
+.project-button .button{
+    float: right;
+
+}
+.project-button {
+    padding-bottom: 75px;
+}
+/*
+################
+ Project overview
+################
+*/
+.seg-controll{
+    padding-top: 30px;
+    text-align: center;
+
+}
+.seg-controll .segmented-control > label{
+  font-size: 18px;
+  line-height:2;
+  background-color: #D8D8D8;
+  margin-bottom: 0px;
+
+}
+.project-details{
+  padding-bottom: 40px
+}
+.project-overview h1{
+    text-align: left;
+    padding: 75px 0 50px 10px;
+}
+.project-overview h2{
+    text-align: left;
+    font-size: 30px;
+    padding: 30px 0 50px 0;
+}
+.project-des{
+    padding-bottom: 30px;
+    text-align: left;
+}
+.project-details p, h3{
+    text-align: left;
+    margin: 0;
+}
+
+/* overoll progress chart */
+.chart-title{
+    padding-top: 40px;
+    text-align: left;
+}
+.circleChart1 {
+    display: inline-block;
+    padding-top: 0px;
+    text-align: center;
+}
+.circleChart1 .icon {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    color: #0C93DD;
+    font-size: 20px;
+}
+.circleChart1 .recharts-layer{
+    width: 350px !important;
+}
+
+/* Monthly  progress chart */
+.chart-progress{
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   margin: 0px;
+   width: 100%;
+   /* background-color: #fff; */
+}
+/* Milestones */
+.milestones{
+    padding-top: 20px;
+    list-style-type: square;
+    line-height: 1.75;
+    font-size: 20px;
+}
+.milestones li{
+    text-align: left;
+    margin-left: 0 !important;
+}
+.milestones li:before {
+    position: absolute;
+    padding-left: -40px !important;
+    font-weight: bold;
+}
+.milestones li.tick:after {
+    content: "\2713";
+    float: right;
+    padding-right: 40px;
+}
+.milestones li.cross:after {
+    content: "\2717";
+    float: right;
+    padding-right: 40px;
+}
+
+/*
+################
+ Project Expenses
+################
+*/
+.table-bordered th{
+   text-align: center;
+}
+.circleChart {
+    margin-top: -25px;
+    padding: 0;
+}
+.circleChart .icon {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    color: #0C93DD;
+    font-size: 20px;
+}
+.expence-title h1{
+    text-align: left;
+    padding: 75px 0 50px 0;
+}
+.expence-title h2{
+    text-align: left;
+    font-size: 30px;
+    padding: 30px 0 50px 0;
+}
+.update-button{
+    padding-top: 30px;
+    text-align: center;
+}
+.add-project .checkbox input[type=checkbox]{
+    margin-left: 20px !important;
+    margin-top: 5px !important
+}
+
+/* Progress bar */
+.input-range {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.input-range__slider {
+  width: 100%;
+}
+.progress,
+.progress__bar {
+  min-height: 1.25rem;
+}
+.progress__value {
+  position: absolute;
+  top: .0625rem;
+  right: .25rem;
+}
+.progress {
+  background-color: #545454;
+  position: relative;
+}
+.progress__bar {
+  background-color: #43b7e1;
+}
+/* // Base rules */
+/* *, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  background-color: #222;
+  color: white;
+  font: 1rem/1 "Open Sans", sans-serif;/
+  text-shadow: 0 1px 1px #000;
+} */
+/* main {
+  margin: 0 auto;
+  width: 80%;
+} */
