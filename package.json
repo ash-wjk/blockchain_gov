@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "mobx": "^5.1.2",
+    "mobx": "^4.4.2",
     "mobx-react": "^5.2.8",
     "popper.js": "^1.14.4",
     "react": "^16.4.2",
