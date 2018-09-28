@@ -11,17 +11,52 @@ import 'react-day-picker/lib/style.css';
 
 
 const AddProject = inject(stores => ({
-  currentProject: stores.projects.currentProject
+  addProject: stores.projects.addProject
 }))(observer(
   class AddProject extends Component {
 
-  buttonClick = () => {
-    console.log('button clicked')
+  initialState = {
+    projectName : '',
+    projectDescription : '',
+    projectBudget: '',
+    projectStartDate: '',
+    projectEndDate: '',
+    projectMilestones: [],
+  }
+
+  state = this.initialState;
+
+  handleInputChange = event => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({
+      [name]:value
+    })
+  }
+
+  handleDayChange = (selectedDay, modifiers, dayPickerInput) => {
+    const { name } = dayPickerInput.props;
+    this.setState({
+      [name]:selectedDay
+    })
+  }
+
+  saveMilestonesList = list => {
+    console.log(list)
+    this.setState({projectMilestones:list});
+  }
+
+  onClearData = () => {
+    this.setState(this.initialState);
+  }
+
+  onAddProject = () => {
+    const { addProject } = this.props;
+    addProject(this.state);
   }
 
   render(){
-    const { currentProject } = this.props;
-    console.log('currentProject', currentProject);
     return(
       <div className="">
           <NavBar />
@@ -53,7 +88,7 @@ const AddProject = inject(stores => ({
 
                   <div className="col-8">
                     <form>
-                      <input type="text" name="name" />
+                      <input type="text" name="projectName" value={this.state.projectName} onChange={this.handleInputChange}/>
                     </form>
                   </div>
                 </div>{/* End of project name */}
@@ -85,7 +120,7 @@ const AddProject = inject(stores => ({
 
                   <div className="col-8">
                     <form>
-                      <textarea />
+                      <textarea name="projectDescription" value={this.state.projectDescription} onChange={this.handleInputChange}/>
                     </form>
                   </div>
                 </div>{/* End of Project Description */}
@@ -97,7 +132,7 @@ const AddProject = inject(stores => ({
 
                   <div className="col-8">
                     <form>
-                      <input type="text" name="name" />
+                      <input type="text" name="projectBudget" value={this.state.projectBudget} onChange={this.handleInputChange}/>
                     </form>
                   </div>
                 </div>{/* End of Project Budget */}
@@ -109,7 +144,7 @@ const AddProject = inject(stores => ({
 
                   <div className="col-8">
                     <form>
-                      <DayPickerInput />
+                      <DayPickerInput name="projectStartDate" selectedDay={this.state.projectStartDate} onDayChange={this.handleDayChange}/>
                     </form>
                   </div>
                 </div>{/* End of Start Date*/}
@@ -121,7 +156,7 @@ const AddProject = inject(stores => ({
 
                   <div className="col-8">
                     <form>
-                      <DayPickerInput />
+                      <DayPickerInput name="projectEndDate" selectedDay={this.state.projectEndDate} onDayChange={this.handleDayChange}/>
                     </form>
                   </div>
                 </div>{/* End of Estimated End Date*/}
@@ -168,7 +203,7 @@ const AddProject = inject(stores => ({
                     </div>
 
                     <div className="col-8 milestones">
-                    <TodoList />
+                    <TodoList onSaveList={this.saveMilestonesList}/>
                   </div>
 
                 </div>
@@ -240,8 +275,8 @@ const AddProject = inject(stores => ({
                 </div>
 
                 <div className="project-button" >
-                    <button class="button" onClick={this.buttonClick}>CLEAR</button>
-                    <button class="button">ADD</button>
+                    <button class="button" onClick={this.onClearData}>CLEAR</button>
+                    <button class="button" onClick={this.onAddProject}>ADD</button>
                 </div>
               </div>
 

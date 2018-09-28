@@ -9,11 +9,9 @@ constructor(props) {
       items: []
     };
 
-   this.addItem = this.addItem.bind(this);
-   this.deleteItem = this.deleteItem.bind(this);
 }
 
-addItem(e) {
+addItem = e => {
   if (this._inputElement.value !== "") {
     var newItem = {
       text: this._inputElement.value,
@@ -29,8 +27,7 @@ addItem(e) {
     this._inputElement.value = "";
   }
   console.log(this.state.items);
-
- e.preventDefault();
+  e.preventDefault();
 }
 
 deleteItem = (key) => {
@@ -43,7 +40,13 @@ deleteItem = (key) => {
   });
 }
 
+saveList = e => {
+  this.props.onSaveList(this.state.items);
+  e.preventDefault();
+}
+
 render() {
+    const { items } = this.state;
     return (
       <div className="todoListMain">
       <div className="header">
@@ -54,7 +57,12 @@ render() {
           <button type="submit">Add</button>
         </form>
       </div>
-      <TodoItems entries={this.state.items} delete={this.deleteItem}/>
+      <TodoItems entries={items} delete={this.deleteItem}/>
+      <div className="todoSaveBtn">
+      <form onSubmit={this.saveList}>  
+      {items.length > 0 ? <button type="submit">Save</button> : null}
+      </form>
+      </div>
     </div>
     );
   }

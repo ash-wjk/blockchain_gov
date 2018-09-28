@@ -258,6 +258,9 @@ body {
     list-style: square;
     text-align: left;
 }
+.todoSaveBtn{
+    padding-left: 20px;
+}
 .add-projec-title1 h1{
     padding: 75px 0 30px 0;
 }
