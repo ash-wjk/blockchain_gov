@@ -10,6 +10,41 @@ import '../styles/main.css';
 import '../styles/largescreen.css';
 
 
+const NUMBER_OF_ROWS = 5;
+
+const ProjectTile = () => {
+  return(
+    <div class="outerclip">
+      <div class="innerclip" onClick={() => {console.log('project')}}>
+        <img src={hexagon}/>
+        <p>PROJECT1</p>
+      </div>
+    </div>
+  )
+}
+
+const ProjectTilesRow = ({numberOfTiles}) => {
+  const tiles = [];
+  for (let index = 0; index < numberOfTiles; index++) {
+    tiles.push(<ProjectTile />);
+  }
+  return(
+    <div class="row">
+    {tiles}
+    </div>
+  )
+}
+
+const ProjectTiles = () => {
+  const tiles = [];
+  for (let index = 0; index < NUMBER_OF_ROWS; index++) {
+    tiles.push(<ProjectTilesRow numberOfTiles={index % 2 === 0 ? 3 : 2} />)
+  }
+  console.log(tiles)
+  return tiles;
+}
+
+
 class Home extends Component {
 
 render(){
@@ -50,86 +85,15 @@ render(){
             <h1>PROJECTS</h1>
           </div>
         </div>
-
         <div className="hex-grid">{/* hexogon grid */}
-        <div class="row">
-            <div class="outerclip">
-              <div class="innerclip">
-                <img src={hexagon} />
-                <p>PROJECT1</p>
-              </div>
-            </div>
-            <div class="outerclip">
-              <div class="innerclip">
-                <img src={hexagon} />
-                <p>PROJECT2</p>
-              </div>
-            </div>
-            <div class="outerclip">
-              <div class="innerclip">
-                <img src={hexagon} />
-                <p>PROJECT3</p>
-              </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="outerclip">
-                <div class="innerclip">
-                  <img src={hexagon} />
-                  <p>PROJECT4</p>
-                </div>
-            </div>
-
-            <div class="outerclip">
-                <div class="innerclip">
-                  <img src={hexagon} />
-                  <p>PROJECT5</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="outerclip">
-              <div class="innerclip">
-                <img src={hexagon} />
-                <p>PROJECT6</p>
-              </div>
-            </div>
-            <div class="outerclip">
-              <div class="innerclip">
-                <img src={hexagon} />
-                <p>PROJECT7</p>
-              </div>
-            </div>
-            <div class="outerclip">
-              <div class="innerclip">
-                <img src={hexagon} />
-                <p>PROJECT8</p>
-              </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="outerclip">
-              <div class="innerclip">
-                <img src={hexagon} />
-                <p>PROJECT9</p>
-              </div>
-            </div>
-            <div class="outerclip">
-              <div class="innerclip">
-                <img src={hexagon} />
-                <p>ADD PROJECT</p>
-              </div>
-            </div>
-        </div>
+          <ProjectTiles />
         </div>{/* end of hexogon grid */}
-
         </div>{/* end of project grid */}
 
         <div>
           <Footer />
         </div>
     </div>
-
   )}
 
 }
