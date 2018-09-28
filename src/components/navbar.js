@@ -4,6 +4,7 @@ import Home from './home'
 import AddProject from './addProject'
 import UpdateProject from './updateProject'
 import OverviewAndExpenses from './overviewAndExpenses'
+import HowItWorks from './howItWorks'
 
 import '../styles/main.css';
 import '../styles/xsscreen.css';
@@ -42,6 +43,9 @@ return(
           </li>
           <li >
             <NavLink to="/overviewAndExpenses">OVERVIEW AND EXPENSES</NavLink>
+          </li>
+          <li >
+            <NavLink to="/howItWorks">HOW IT WORKS</NavLink>
           </li>
         </ul>
 
