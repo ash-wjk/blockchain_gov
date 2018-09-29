@@ -20,12 +20,18 @@ class Project {
         this.description = data.description;
         this.startDate = data.startDate;
         this.endDate = data.endDate;
-        data.projectMilestones.forEach( milestoneData => {
-            this.milestones.push(new Milestone(milestoneData));
-        });
-        data.projectExpenditures.forEach(expenditureData => {
-            this.expenditures.push(new Expenditure(expenditureData))
-        });
+        
+        if(data.projectMilestones){
+            data.projectMilestones.forEach( milestoneData => {
+                this.milestones.push(new Milestone(milestoneData));
+            });
+        }
+
+        if(data.projectExpenditures){
+            data.projectExpenditures.forEach(expenditureData => {
+                this.expenditures.push(new Expenditure(expenditureData))
+            });
+        }
     }
 }
 
