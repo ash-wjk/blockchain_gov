@@ -4,19 +4,18 @@ import Project from '../models/Project';
 
 class ProjectStore {
     projectsList = [];
-    currentProject = 'My Project';
-
-    addProject = projectData => {
-        const project = new Project(projectData);
-        console.log('Project Added', project);
-        this.projectsList.push(project);
+    currentProject;
+    
+    setCurrentProject = projectData => {
+        this.currentProject = new Project(projectData);
     }
     
 }
 
 decorate(ProjectStore, {
     projectsList: observable,
-    currentProject: observable
+    currentProject: observable,
+    setCurrentProject: action,
 })
 
 export default ProjectStore;

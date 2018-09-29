@@ -8,15 +8,14 @@ import ProgressGraph from './progressGraph'
 import '../styles/main.css';
 import '../styles/largescreen.css';
 
-const Overview = () => (
+const Overview = ({name}) => (
   <div>
-
 
   <div className="container">
   <div className="page-border row">{/* page title */}
     <div className="col-12">
     <div className="project-overview">
-      <h1>PROJECT NAME</h1>
+      <h1>{name}</h1>
     </div>
     </div>
   </div>
