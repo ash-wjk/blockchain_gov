@@ -17,21 +17,11 @@ class App extends Component {
       <NavBar />
           <div className="row">
             <div className="col-12">
-
-            <Link to="/">HOME</Link>
-            <Link to="/components/addProject">ADD PROJECT</Link>
-            <Link to="/components/updateProject">UPDATE PROJECT</Link>
-            <Link to="/components/overviewAndExpenses">OVERVIEW AND EXPENSES</Link>
-            <Link to="/components/howItWorks">HOW IT WORKS</Link>
             <Route exact path="/" component={Home} />
             <Route path="/addProject" component={AddProject} />
             <Route path="/updateProject" component={UpdateProject} />
             <Route path="/overviewAndExpenses" component={OverviewAndExpenses} />
             <Route path="/howItWorks" component={HowItWorks} />
-              {/*<Home />*/ }
-               {/* <AddProject />*/ }
-              {/* <OverviewAndExpenses />*/ }
-              {/*<UpdateProject />*/ }
             </div>
           </div>
         </div>
