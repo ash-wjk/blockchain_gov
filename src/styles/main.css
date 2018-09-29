@@ -23,10 +23,19 @@ body {
 .page-center{
     padding: 0 250px;
 }
+.page-center-update{
+  padding: 0 130px;
+}
 .line-center{
     padding: 0 200px;
 }
 .line-center hr{
+    margin: 20px 0;
+}
+.line-center-update{
+  padding: 0 100px;
+}
+.line-center-update hr{
     margin: 20px 0;
 }
 .page-border{
@@ -72,6 +81,7 @@ body {
     display: flex;
     justify-content: center;
     list-style: none;
+    max-width: 100%;
 }
 .navbar-inverse{
     background-color: #000000;
@@ -208,7 +218,7 @@ body {
 
 /*
 ################
- Add project styles
+ How it works styles
 ################
 */
 .how-it-works h1{
@@ -239,7 +249,7 @@ body {
 
 /*
 ################
- End of Add project styles
+ End of How it works styles
 ################
 */
 
@@ -320,6 +330,33 @@ body {
 .project-button {
     padding-bottom: 75px;
 }
+/*
+################
+ Update project styles
+################
+*/
+
+.update-project input, textarea{
+  width: 250px;
+  margin: 0px 20px;
+}
+.update-project textarea{
+  width: 250px;
+  height: 100px;
+  margin: 0px 20px;
+  margin-bottom: 15px;
+}
+.update-project .checkbox-update input{
+  width: 30px;
+  height: 30px;
+  margin: 0 !important;
+  padding: 0;
+}
+/*
+################
+ End of Update project styles
+################
+*/
 /*
 ################
  Project overview
