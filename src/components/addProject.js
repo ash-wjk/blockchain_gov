@@ -11,7 +11,7 @@ import 'react-day-picker/lib/style.css';
 
 
 const AddProject = inject(stores => ({
-  addProject: stores.projects.addProject
+  addProject: stores.ledger.addProject
 }))(observer(
   class AddProject extends Component {
 
