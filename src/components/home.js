@@ -93,8 +93,6 @@ const Home = inject(stores => ({
   
       return(
         <div className="home-page">
-            <NavBar />
-  
             <div className="row">{/* Banner */}
                   <div className="col-md-12">
                       <div id="home_image" className="bg-image" >
