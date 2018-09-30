@@ -55,7 +55,7 @@ const OverviewAndExpenses = inject(stores => ({
               style={{ width: 400, color: '#0C93DD', border: 0}} // purple400
               />
 
-            {currentView === 'overview' ? <Overview {...currentProject}/> : <Expenses {...currentProject}/>}
+            {currentView === 'overview' ? <Overview {...currentProject} completionPrecentage={currentProject.completionPrecentage}/> : <Expenses project={currentProject}/>}
     
           </div>
             <Footer />

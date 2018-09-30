@@ -10,7 +10,7 @@ import BalanceGraph from './balanceGraph'
 import '../styles/main.css';
 import '../styles/largescreen.css';
 
-const Expenses = () => (
+const Expenses = ({project}) => (
 <div>
 
   <div className="container">
@@ -28,11 +28,11 @@ const Expenses = () => (
         <table className="table table-bordered">
           <tr>
             <th scope="col">
-              <h2>£50000</h2>
+              <h2>{`£${project.budget}`}</h2>
               <p>Budget</p>
             </th>
             <th scope="col">
-            <h2>£37000</h2>
+            <h2>{`£${project.totalExpences}`}</h2>
             <p>Total Expenses</p>
             </th>
           </tr>
@@ -41,8 +41,8 @@ const Expenses = () => (
 
       <div className="col-2">
         <div className="circleChart">
-          <ExpensePrecentageGraph />
-          <div className="icon">21%</div>
+          <ExpensePrecentageGraph fillValue={project.expencesPrecentage}/>
+          <div className="icon">{`${project.expencesPrecentage}%`}</div>
         </div>
       </div>
 
@@ -51,11 +51,11 @@ const Expenses = () => (
           <thead>
             <tr>
               <th scope="col">
-                <h2>£13000</h2>
+                <h2>{`£${project.remainingBudget}`}</h2>
                 <p>Remaining Budget</p>
               </th>
               <th scope="col">
-                <h2>5%</h2>
+                <h2>{`${project.remainingBudgetPrecentage}%`}</h2>
                 <p>% Remaining Budget</p>
               </th>
             </tr>

@@ -9,6 +9,7 @@ const COLORS = ['#0C93DD', '#ededed'];
 class ExpenceGraph extends Component{
 
 	render () {
+    const { fillValue } = this.props;
   	return (
     	<PieChart width={170} height={175}>
         <Pie

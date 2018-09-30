@@ -8,6 +8,7 @@ const COLORS = ['#0C93DD', '#ededed'];
 class ExpensePrecentageGraph extends Component{
 
 	render () {
+  const { fillValue } = this.props;
   	return (
     	<PieChart width={130} height={155}>
         <Pie

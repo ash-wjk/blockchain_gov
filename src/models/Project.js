@@ -39,6 +39,33 @@ class Project {
         return this.milestones.filter(milestone => !milestone.completed );
     }
 
+    get completionPrecentage(){
+        const noOfCompletedMilestones = this.milestones.length - this.incompleteMilestones.length;
+        return (noOfCompletedMilestones/this.milestones.length) * 100;
+    }
+
+    get totalExpences(){
+        let total = 0;
+        this.expenditures.forEach(expenditure => {
+            total += parseFloat(expenditure.amount);
+        });
+
+        return total;
+    }
+
+    get expencesPrecentage(){
+        return (this.totalExpences/this.budget) * 100;
+    }
+
+    get remainingBudget(){
+        return this.budget - this.totalExpences;
+    }
+
+
+    get remainingBudgetPrecentage(){
+        return (this.remainingBudget/this.budget) * 100;
+    }
+
 
 }
 
@@ -49,7 +76,12 @@ decorate(Project, {
     startDate:observable,
     endDate:observable,
     milestones:observable,
-    incompleteMilestones: computed
+    incompleteMilestones: computed,
+    completionPrecentage: computed,
+    totalExpences: computed,
+    expencesPrecentage: computed,
+    remainingBudget: computed,
+    remainingBudgetPrecentage: computed
 })
 
 export default Project;
