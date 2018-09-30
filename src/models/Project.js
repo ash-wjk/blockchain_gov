@@ -15,7 +15,8 @@ class Project {
 
 
     constructor(data){
-        this.id = data.id,
+        this.id = data.id;
+        this.budget = data.budget;
         this.name = data.name;
         this.description = data.description;
         this.startDate = data.startDate;
@@ -66,6 +67,18 @@ class Project {
         return (this.remainingBudget/this.budget) * 100;
     }
 
+    get completionGraphData(){
+        const data = [];
+        this.milestones.forEach(milestone => {
+            if(milestone.completionDate){
+               const dataPoint =  {name: 'Jul' ,pv: 6400, amt: 2400};
+               data.push(dataPoint);
+            }
+        })
+
+        return data;
+    }
+
 
 }
 
@@ -81,7 +94,8 @@ decorate(Project, {
     totalExpences: computed,
     expencesPrecentage: computed,
     remainingBudget: computed,
-    remainingBudgetPrecentage: computed
+    remainingBudgetPrecentage: computed,
+    completionGraphData: computed
 })
 
 export default Project;

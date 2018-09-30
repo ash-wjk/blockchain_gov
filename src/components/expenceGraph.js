@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 import { PieChart, Pie, Legend, Sector, Cell } from 'recharts';
 
 
-const data = [{name: 'name', value: 21}, {name: 'other', value: 79}];
+
 const COLORS = ['#0C93DD', '#ededed'];
 
 class ExpenceGraph extends Component{
 
 	render () {
     const { fillValue } = this.props;
+    const data = [{name: 'name', value: fillValue}, {name: 'other', value: 100-fillValue}];
+   
   	return (
     	<PieChart width={170} height={175}>
         <Pie

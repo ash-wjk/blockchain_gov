@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { row, col, table } from 'bootstrap';
+import moment from 'moment'
+
 import ExpenceGraph from './expenceGraph'
 import ProgressGraph from './progressGraph'
 
@@ -8,13 +9,13 @@ import ProgressGraph from './progressGraph'
 import '../styles/main.css';
 import '../styles/largescreen.css';
 
-const Overview = ({name, description, startDate, endDate, milestones, completionPrecentage}) => (
+const Overview = ({project}) => (
   <div>
   <div className="container">
   <div className="page-border row">{/* page title */}
     <div className="col-12">
     <div className="project-overview">
-      <h1>{name}</h1>
+      <h1>{project.name}</h1>
     </div>
     </div>
   </div>
@@ -22,7 +23,7 @@ const Overview = ({name, description, startDate, endDate, milestones, completion
   <div className="page-border row">
     <div className="col-8">{/*row 8*/}
     <div className="project-details">{/* poject discription */}
-    <p className="project-des">{description}</p>
+    <p className="project-des">{project.description}</p>
 
       <div className="row">{/* poject dates */}
         <div className="col-5">
@@ -30,8 +31,8 @@ const Overview = ({name, description, startDate, endDate, milestones, completion
           <h3>Estimated end Date:</h3>
         </div>
         <div className="col-7">
-          <p>{startDate}</p>
-          <p>{endDate}</p>
+          <p>{moment(project.startDate).format('MMMM Do YYYY')}</p>
+          <p>{moment(project.endDate).format('MMMM Do YYYY')}</p>
         </div>
       </div>{/* end of poject dates */}
 
@@ -40,8 +41,8 @@ const Overview = ({name, description, startDate, endDate, milestones, completion
 
     <div className="col-4">{/*row 4*/}
       <div className="circleChart1">
-        <ExpenceGraph fillValue={completionPrecentage}/>
-        <div className="icon">{`${completionPrecentage}%`}</div>
+        <ExpenceGraph fillValue={project.completionPrecentage}/>
+        <div className="icon">{`${project.completionPrecentage}%`}</div>
       </div>
     </div> {/*end of row 4*/}
 
@@ -54,7 +55,7 @@ const Overview = ({name, description, startDate, endDate, milestones, completion
       <h2>MONTHLY PROGRESS</h2>
     </div>
       <div className="chart-progress">
-        <ProgressGraph />
+        <ProgressGraph data={project.completionGraphData}/>
       </div>
     </div> {/*end of row 6*/}
     {/* end of monthly progress chart*/}
@@ -67,7 +68,7 @@ const Overview = ({name, description, startDate, endDate, milestones, completion
         <div >{/*row 6*/}
           <ul className="milestones">
           {
-            milestones.map(milestone => 
+            project.milestones.map(milestone => 
             <li className={milestone.completed ? "tick" : "cross"}>{milestone.name}  </li>)
           }
           </ul>
