@@ -26,6 +26,34 @@ const AddProject = inject(stores => ({
 
   state = this.initialState;
 
+  validateInputs = () => {
+    const errorMsgs = [];
+    if (!this.state.projectName){
+      errorMsgs.push("Please enter project name");
+    }
+    if(!this.state.projectDescription){
+      errorMsgs.push("Please enter project description");
+    }
+    if(!this.state.projectBudget){
+      errorMsgs.push("Please enter project budget");
+    }
+   if(!this.state.projectStartDate){
+      errorMsgs.push("Please enter project start date");
+    }
+    if(!this.state.projectEndDate){
+      errorMsgs.push("Please enter project end date");
+    }
+    if(this.state.projectMilestones.length === 0){
+      errorMsgs.push("Please enter project milestoes");
+    }
+    if(this.state.projectStartDate && this.state.projectEndDate){
+      if(this.state.projectStartDate > this.state.projectEndDate){
+        errorMsgs.push("Start date must be befor the end date");
+      }
+    }
+    return errorMsgs;
+  }
+
   handleInputChange = event => {
     const target = event.target;
     const value = target.value;
@@ -52,6 +80,14 @@ const AddProject = inject(stores => ({
   }
 
   onAddProject = () => {
+
+    const errorMsgs = this.validateInputs();
+    console.log('Error:', errorMsgs)
+    if(errorMsgs.length > 0 ){ 
+      window.alert(errorMsgs.join('\r\n'));   
+      
+    }
+
     const { addProject } = this.props;
     addProject(this.state);
   }
@@ -130,7 +166,7 @@ const AddProject = inject(stores => ({
 
                   <div className="col-8">
                     <form>
-                      <input type="text" name="projectBudget" value={this.state.projectBudget} onChange={this.handleInputChange}/>
+                      <input type="number" name="projectBudget" value={this.state.projectBudget} onChange={this.handleInputChange}/>
                     </form>
                   </div>
                 </div>{/* End of Project Budget */}
@@ -207,68 +243,7 @@ const AddProject = inject(stores => ({
                 </div>
                 {/* End of Milestones*/}
                 <hr/>
-                <div>{/* Expenditure*/}
-                  <div className="add-projec-title">
-                    <h1>Expenditure </h1>
-                  </div>
-
-                  <div class="row">
-                    <div className="col-4">
-                      <p>Reason :</p>
-                    </div>
-
-                    <div className="col-8">
-                      <form>
-                        <input type="text" name="name" />
-                      </form>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div className="col-4">
-                      <p>Amount :</p>
-                    </div>
-
-                    <div className="col-8">
-                      <form>
-                        <input type="text" name="name" />
-                      </form>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div className="col-4">
-                      <p>Evidence (Eg: Receipt) :</p>
-                    </div>
-
-                    <div className="col-8">
-                      <form>
-                        <input type="file" />
-                      </form>
-                    </div>
-                  </div>
-
-                </div>{/* End of Expenditure*/}
-
-                <div>{/* project completed*/}
-
-                <hr/>
-                <div className="add-projec-title">
-                  <h1>Project completion  </h1>
-                </div>
-
-                <div class="row">
-                  <div className="col-4">
-                    <p>Is this project completed? :</p>
-                  </div>
-
-                  <div className="col-8 checkbox">
-                    <form>
-                    <input name="" type="checkbox" />
-                    </form>
-                  </div>
-                </div>
-                </div>{/* End of project completed*/}
+                
 
                 </div>
 
@@ -277,6 +252,10 @@ const AddProject = inject(stores => ({
                     <button class="button" onClick={this.onAddProject}>ADD</button>
                 </div>
               </div>
+
+
+
+
 
               <div>
                 <Footer />
