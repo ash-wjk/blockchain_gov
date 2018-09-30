@@ -41,7 +41,20 @@ const UpdateProject = inject(stores => ({
     }
 
     state = this.initialState;
-
+    validateInputs = () => {
+      const errorMsgs = [];
+      if (!this.state.amount){
+        errorMsgs.push("Please enter amount");
+      }
+      if(!this.state.description){
+        errorMsgs.push("Please enter description");
+      }
+      if(!this.state.date){
+        errorMsgs.push("Please enter date");
+      }
+      
+      return errorMsgs;
+    }
     handleInputChange = event => {
       const target = event.target;
       const value = target.value;
@@ -63,8 +76,15 @@ const UpdateProject = inject(stores => ({
     }
 
     onAddExpenditure = () => {
+ 
+    const errorMsgs = this.validateInputs();
+    console.log('Error:', errorMsgs)
+    if(errorMsgs.length > 0 ){ 
+      window.alert(errorMsgs.join('\r\n'));   
+    }else{
       const { addExpenditure } = this.props;
       addExpenditure(this.state);
+    }
     }
 
     onMilestoneComplation = milestone => {
@@ -119,7 +139,7 @@ const UpdateProject = inject(stores => ({
   
                     <div className="col-6">
                       <form>
-                        <input type="text" name="amount" onChange={this.handleInputChange}/>
+                        <input type="number" name="amount" onChange={this.handleInputChange}/>
                       </form>
                     </div>
                   </div>

@@ -42,7 +42,7 @@ const Overview = ({project}) => (
     <div className="col-4">{/*row 4*/}
       <div className="circleChart1">
         <ExpenceGraph fillValue={project.completionPrecentage}/>
-        <div className="icon">{`${project.completionPrecentage}%`}</div>
+        <div className="icon">{`${project.completionPrecentage.toFixed(2)}%`}</div>
       </div>
     </div> {/*end of row 4*/}
 

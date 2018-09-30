@@ -10,7 +10,7 @@ class ExpenceGraph extends Component{
 
 	render () {
     const { fillValue } = this.props;
-    const data = [{name: 'name', value: fillValue}, {name: 'other', value: 100-fillValue}];
+    const data = [{name: 'name', value: fillValue}, {name: 'other', value: 100 - fillValue}];
    
   	return (
     	<PieChart width={170} height={175}>

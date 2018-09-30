@@ -85,11 +85,10 @@ const AddProject = inject(stores => ({
     console.log('Error:', errorMsgs)
     if(errorMsgs.length > 0 ){ 
       window.alert(errorMsgs.join('\r\n'));   
-      
+    }else{
+      const { addProject } = this.props;
+      addProject(this.state);
     }
-
-    const { addProject } = this.props;
-    addProject(this.state);
   }
 
   render(){

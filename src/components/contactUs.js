@@ -30,7 +30,7 @@ render(){
               <div className="col-md-12">
                   <div id="home_image" className="bg-image" >
                     <div className="container title-text" >
-                      <h1 className="homePageTitle">NEWS</h1>
+                      <h1 className="homePageTitle">CONTACT US</h1>
                     </div>
                   </div>
               </div>
@@ -39,9 +39,10 @@ render(){
         <div className="intro">
         <div className="row">{/* intro text */}
           <div className="col-md-6 col-md-offset-3 text-center how-it-works">
-            <h1><strong>TOP STORIES</strong></h1>
+            <h1><strong>WE ARE HERE TO HELP</strong></h1>
             <hr/>
-            <p>We would like to answer any questions you have and provide any information you need.</p>
+            <p>We would like to answer any questions you have and provide</p>
+            <p>any information you need.</p>
           </div>
         </div>{/* End of intro text */}
         </div>

@@ -37,11 +37,10 @@ return(
 
           <li class="nav-item">
             <NavLink to="/">HOME</NavLink>
-            {/*<a class="nav-link" href="#">HOW IT WORKS</a>*/}
+            {/* <a class="nav-link" href="#">HOW IT WORKS</a>*/}
           </li>
           <li>
             <NavLink to="/addProject">ADD PROJECT</NavLink>
-            {/*<a class="nav-link" href="#">BACKGROUND</a>*/}
           </li>
           <li>
             <NavLink to="/updateProject">UPDATE PROJECT</NavLink>
