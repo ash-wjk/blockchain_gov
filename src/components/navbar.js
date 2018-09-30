@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter,Router, Switch, Route, Link, NavLink } from "react-router-dom";
-import Home from './home'
-import AddProject from './addProject'
-import UpdateProject from './updateProject'
-import OverviewAndExpenses from './overviewAndExpenses'
-import HowItWorks from './howItWorks'
-import CreateProject from './createProject'
-import BidProject from './bidProject'
-import News from './news'
-import ContactUs from './contactUs'
+import { NavLink } from "react-router-dom";
 
 
 import '../styles/main.css';
@@ -34,19 +25,12 @@ return(
       <div class="collapse navbar-collapse" id="navbarNav">
 
         <ul class="navbar-nav">
-
           <li class="nav-item">
             <NavLink to="/">HOME</NavLink>
             {/* <a class="nav-link" href="#">HOW IT WORKS</a>*/}
           </li>
-          <li>
-            <NavLink to="/addProject">ADD PROJECT</NavLink>
-          </li>
-          <li>
-            <NavLink to="/updateProject">UPDATE PROJECT</NavLink>
-          </li>
           <li >
-            <NavLink to="/overviewAndExpenses">OVERVIEW AND EXPENSES</NavLink>
+            <NavLink to="/bidProject">PLACE A BID</NavLink>
           </li>
           <li >
             <NavLink to="/howItWorks">HOW IT WORKS</NavLink>
@@ -57,14 +41,6 @@ return(
           <li >
             <NavLink to="/contactUs">CONTACT US</NavLink>
           </li>
-
-            {/*<li >
-            <NavLink to="/createProject">CREATE PROJECT</NavLink>
-          </li>
-          <li >
-            <NavLink to="/bidProject">PLACE A BID</NavLink>
-          </li>*/}
-
         </ul>
 
       </div>
