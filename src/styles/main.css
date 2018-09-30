@@ -532,3 +532,69 @@ body {
   margin: 0 auto;
   width: 80%;
 } */
+
+/*
+################
+ News
+################
+*/
+.news-box{
+  background-color: #fff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.news-box img{
+  width: 100%;
+  height: 135px;
+}
+.news-box .news-des{
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 10px;
+}
+.news-box p{
+  font-size: 12px;
+  padding: 0 0px 0px 10px;
+  margin: 0;
+}
+.news-box a{
+  font-size: 12px;
+  padding: 0 10px 10px 10px;
+}
+/*
+################
+ contact us
+################
+*/
+.contact-us {
+  margin: 10px 20px;
+}
+.contact-us input{
+  margin: 10px 0;
+  width: 80%;
+  height: 30px;
+}
+.contact-us textarea{
+  margin: 10px 0 0 0;
+  width: 80%;
+  height: 100px;
+}
+.contact-button .button{
+    align: center;
+}
+.contact-button {
+    padding-bottom: 75px;
+}
+.contact-us img{
+  width: 30px;
+  /* margin-top: 20px; */
+}
+.contact-us span{
+  font-size: 18px;
+  margin: 20px;
+}
+.google-map{
+  margin-bottom: -50px;
+  padding-bottom: 0 !important;
+  /* height: 200px !important; */
+}
