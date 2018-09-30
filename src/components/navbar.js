@@ -5,6 +5,11 @@ import AddProject from './addProject'
 import UpdateProject from './updateProject'
 import OverviewAndExpenses from './overviewAndExpenses'
 import HowItWorks from './howItWorks'
+import CreateProject from './createProject'
+import BidProject from './bidProject'
+import News from './news'
+import ContactUs from './contactUs'
+
 
 import '../styles/main.css';
 import '../styles/xsscreen.css';
@@ -47,6 +52,20 @@ return(
           <li >
             <NavLink to="/howItWorks">HOW IT WORKS</NavLink>
           </li>
+          <li >
+            <NavLink to="/news">NEWS</NavLink>
+          </li>
+          <li >
+            <NavLink to="/contactUs">CONTACT US</NavLink>
+          </li>
+
+            {/*<li >
+            <NavLink to="/createProject">CREATE PROJECT</NavLink>
+          </li>
+          <li >
+            <NavLink to="/bidProject">PLACE A BID</NavLink>
+          </li>*/}
+
         </ul>
 
       </div>
