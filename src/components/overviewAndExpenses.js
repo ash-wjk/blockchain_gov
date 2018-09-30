@@ -11,13 +11,17 @@ import '../styles/largescreen.css';
 
 
 const OverviewAndExpenses = inject(stores => ({
-  currentProject : stores.projects.currentProject
-
+  currentProject : stores.projects.currentProject,
+  getProjectData : stores.ledger.getProjectData
 }))(observer(
   class OverviewAndExpenses extends Component {
 
     state = {
       currentView : 'overview',
+    }
+
+    componentDidMount(){
+      this.props.getProjectData();
     }
     
     render(){
@@ -27,7 +31,6 @@ const OverviewAndExpenses = inject(stores => ({
       
       return(
         <div>
-          <NavBar />
           <div className="row">{/* Banner */}
                 <div className="col-md-12">
                     <div id="home_image" className="bg-image" >

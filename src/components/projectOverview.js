@@ -10,7 +10,6 @@ import '../styles/largescreen.css';
 
 const Overview = ({name}) => (
   <div>
-
   <div className="container">
   <div className="page-border row">{/* page title */}
     <div className="col-12">

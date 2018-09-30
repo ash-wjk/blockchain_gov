@@ -9,7 +9,6 @@ class ProjectStore {
     setCurrentProject = projectData => {
         this.currentProject = new Project(projectData);
     }
-    
 }
 
 decorate(ProjectStore, {

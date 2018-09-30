@@ -1,4 +1,5 @@
 import { observable, computed, action, decorate } from "mobx";
+import Milestone from "../models/Milestone";
 const axios = require('axios');
 
 const BASE_URL = 'http://localhost:3001';
@@ -28,6 +29,39 @@ class LedgerStore {
         })
     }
 
+    addExpenditure = data => {
+        const projectId = this.projectsStoreRef.currentProject.id;
+        const id = Date.now();
+        const expenditureData = {
+            id,
+            projectId,
+            ...data
+        }
+        console.log(expenditureData);
+        axios.post(ADD_EXPENDITURE, expenditureData)
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    addMilestone = data => {
+        const projectId = this.projectsStoreRef.currentProject.id;
+        const milestoneData = {
+            projectId,
+            ...data
+        }
+        axios.post(ADD_MILESTONE, milestoneData)
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     getProjects = () => {
         axios.get(GET_PROJECTS)
         .then(response => {
@@ -45,6 +79,7 @@ class LedgerStore {
         axios.get(url)
         .then(response => {
             console.log(response);
+            this.projectsStoreRef.setCurrentProject(response.data)
         })
         .catch(error => {
             console.log(error);
