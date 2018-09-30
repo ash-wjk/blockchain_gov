@@ -8,7 +8,7 @@ import '../styles/main.css';
 import '../styles/largescreen.css';
 import 'react-day-picker/lib/style.css';
 
-class CreateProject extends Component {
+class BidProject extends Component {
 
 buttonClick = () => {
   console.log('button clicked')
@@ -25,7 +25,7 @@ render(){
               <div className="col-md-12">
                   <div id="home_image" className="bg-image" >
                     <div className="page-center title-text" >
-                      <h1 className="homePageTitle">CREATE PROJECT</h1>
+                      <h1 className="homePageTitle">PLACE A BID</h1>
                     </div>
                   </div>
               </div>
@@ -36,14 +36,33 @@ render(){
         <div className="page-center">
 
               <div className="add-projec-title1">
-                <h1>Project Details</h1>
+                <h1>Place Your Bid</h1>
               </div>
 
             <div className="add-project">
 
-              <div class="row">{/* Project name */}
+              <div class="row">{/* End of project name  */}
                 <div className="col-4">
                   <p>Project Name :</p>
+                </div>
+
+                <div className="col-8">
+                <form>
+                  <div>
+                    <select className="dropdown-color">
+                      <option value="">Select project name</option>
+                      <option value="">aaa</option>
+                      <option value="">bbb</option>
+                      <option value="">ccc</option>
+                    </select>
+                  </div>
+                </form>
+                </div>
+              </div>{/* End of project name */}
+
+              <div class="row">{/* Company name */}
+                <div className="col-4">
+                  <p>Company Name :</p>
                 </div>
 
                 <div className="col-8">
@@ -53,40 +72,9 @@ render(){
                 </div>
               </div>{/* End of project name */}
 
-              <div class="row">{/* End of Project category */}
+              <div class="row">{/* Contact name */}
                 <div className="col-4">
-                  <p>Project Category :</p>
-                </div>
-
-                <div className="col-8">
-                <form>
-                  <div>
-                    <select className="dropdown-color">
-                      <option value="">Select project category</option>
-                      <option value="">Construction</option>
-                      <option value="">Welfare</option>
-                      <option value="">Agriculture</option>
-                    </select>
-                  </div>
-                </form>
-                </div>
-              </div>{/* End of project category */}
-
-              <div class="row">{/* Project Description */}
-                <div className="col-4">
-                  <p>Project Description :</p>
-                </div>
-
-                <div className="col-8">
-                  <form>
-                    <textarea />
-                  </form>
-                </div>
-              </div>{/* End of Project Description */}
-
-              <div class="row">{/* Project Budget */}
-                <div className="col-4">
-                  <p>Project Budget :</p>
+                  <p>Contact Name :</p>
                 </div>
 
                 <div className="col-8">
@@ -94,38 +82,51 @@ render(){
                     <input type="text" name="name" />
                   </form>
                 </div>
-              </div>{/* End of Project Budget */}
+              </div>{/* End of Contact name */}
 
-              <div class="row"> {/* Start Date*/}
+              <div class="row">{/* Contact email */}
                 <div className="col-4">
-                  <p>Start Date :</p>
+                  <p>Contact Email :</p>
                 </div>
 
                 <div className="col-8">
                   <form>
-                    <DayPickerInput />
+                    <input type="text" name="name" />
                   </form>
                 </div>
-              </div>{/* End of Start Date*/}
+              </div>{/* End of Contact email*/}
 
-              <div class="row">{/* Estimated End Date */}
+              <div class="row">{/* Project Bid */}
                 <div className="col-4">
-                  <p>Estimated End Date :</p>
+                  <p>Your Budget :</p>
                 </div>
 
                 <div className="col-8">
                   <form>
-                    <DayPickerInput />
+                    <input type="text" name="name" />
                   </form>
                 </div>
-              </div>{/* End of Estimated End Date*/}
+              </div>{/* End of Project Bid*/}
+
+              <div class="row">
+                <div className="col-4">
+                  <p>Proposal :</p>
+                </div>
+
+                <div className="col-8">
+                  <form>
+                    <input type="file" />
+                  </form>
+                </div>
+              </div>
+
 
               <hr/>
               {/* Contractor Details */}
 
               <div className="project-button" >
                   <button class="button" onClick={this.buttonClick}>CLEAR</button>
-                  <button class="button">ADD</button>
+                  <button class="button">SUBMIT</button>
               </div>
 
            </div>
@@ -139,4 +140,4 @@ render(){
 
 }
 
-export default CreateProject;
+export default BidProject;
