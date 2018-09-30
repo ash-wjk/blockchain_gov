@@ -15,7 +15,7 @@ addItem = e => {
   if (this._inputElement.value !== "") {
     var newItem = {
       text: this._inputElement.value,
-      key: Date.now()
+      id: Date.now()
     };
 
     this.setState((prevState) => {
@@ -30,9 +30,9 @@ addItem = e => {
   e.preventDefault();
 }
 
-deleteItem = (key) => {
+deleteItem = (id) => {
   var filteredItems = this.state.items.filter(function (item) {
-    return (item.key !== key);
+    return (item.id !== id);
   });
 
   this.setState({

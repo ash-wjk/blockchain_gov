@@ -7,8 +7,8 @@ class TodoItems extends Component {
   }
 
   createTasks = (item) => {
-    return <li onClick={() => this.props.delete(item.key)}
-              key={item.key}>{item.text}</li>
+    return <li onClick={() => this.props.delete(item.id)}
+              id={item.id}>{item.text}</li>
   }
 
   render() {
