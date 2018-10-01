@@ -4,7 +4,7 @@ import NavBar from './navbar'
 import Footer from './footer'
 import { row, col, table } from 'bootstrap';
 import DayPickerInput from 'react-day-picker/DayPickerInput'
-import TodoList from "./TodoList";
+import TodoList from "./todoList";
 import '../styles/main.css';
 import '../styles/largescreen.css';
 import 'react-day-picker/lib/style.css';
