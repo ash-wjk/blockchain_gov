@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Line  } from 'recharts';
 
-const data = [
+const testData = [
       {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
       {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
       {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
@@ -14,7 +14,7 @@ const data = [
 class BalanceGraph extends Component{
 
   	render () {
-      const {chartTitle, balance} = this.props;
+      const {chartTitle, data} = this.props;
 
       console.log(this.props);
     	return (

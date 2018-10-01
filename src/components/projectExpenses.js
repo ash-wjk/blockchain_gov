@@ -1,7 +1,4 @@
 import React from 'react';
-import { row, col, table } from 'bootstrap';
-import ExpenceGraph from './expenceGraph'
-import ProgressGraph from './progressGraph'
 import ExpensePrecentageGraph from './expencePrecentage'
 import ProjectExpensesGraph from './projectExpensesGraph'
 import BalanceGraph from './balanceGraph'
@@ -54,7 +51,7 @@ const Expenses = ({project}) => (
                 <p>Remaining Budget</p>
               </th>
               <th scope="col">
-                <h2>{`${project.remainingBudgetPrecentage}%`}</h2>
+                <h2>{`${project.remainingBudgetPrecentage.toFixed(2)}%`}</h2>
                 <p>% Remaining Budget</p>
               </th>
             </tr>
@@ -71,14 +68,14 @@ const Expenses = ({project}) => (
         <div className="page-border expence-title">
           <h2>PROJECT EXPENSES</h2>
         </div>
-        <ProjectExpensesGraph />
+        <ProjectExpensesGraph data={project.expensesGraphData}/>
       </div>
 
       <div className="col-6">
         <div className="page-border expence-title">
           <h2>REMAINING BALANCE</h2>
         </div>
-        <BalanceGraph />
+        <BalanceGraph data={project.remainingBudgetGraphData}/>
       </div>
     </div>{/* end of row*/}
     

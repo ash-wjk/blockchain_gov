@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend  } from 'recharts';
 
 
-const data = [
+const testData = [
   {name: 'Jul',pv: 6400, amt: 2400},
   {name: 'Jun',pv: 5398, amt: 2210},
   {name: 'May',pv: 4800, amt: 2290},

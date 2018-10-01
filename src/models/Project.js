@@ -86,6 +86,34 @@ class Project {
         return data;
     }
 
+    get expensesGraphData(){
+        const data = [];
+        const expendituresSortbyDate = this.expenditures.sort((a,b) => 
+        a.date - b.date);
+        expendituresSortbyDate.forEach(expenditure => {
+            const date = moment(expenditure.date).format('Do MMM');
+            const dataPoint =  {name: date ,pv: parseFloat(expenditure.amount)};
+            data.push(dataPoint);
+        })
+
+        return data;
+    }
+
+    get remainingBudgetGraphData(){
+        const data = [];
+        const expendituresSortbyDate = this.expenditures.sort((a,b) => 
+        a.date - b.date);
+        let cumExpences = 0; 
+        expendituresSortbyDate.forEach(expenditure => {
+            cumExpences += parseFloat(expenditure.amount);
+            const date = moment(expenditure.date).format('Do MMM');
+            const dataPoint =  {name: date ,uv: parseFloat(this.budget - cumExpences)};
+            data.push(dataPoint);
+        })
+
+        return data;
+    }
+
 
 }
 
@@ -102,7 +130,9 @@ decorate(Project, {
     expencesPrecentage: computed,
     remainingBudget: computed,
     remainingBudgetPrecentage: computed,
-    completionGraphData: computed
+    completionGraphData: computed,
+    expensesGraphData: computed,
+    remainingBudgetGraphData: computed
 })
 
 export default Project;
