@@ -23,7 +23,7 @@ export class VotingProjects extends Component{
                 <tbody>
                     <tr>
                         <th>Project</th>
-                        <th>Rating</th> 
+                        <th>Votes</th> 
                     </tr>
                     {projectList}
                 </tbody>

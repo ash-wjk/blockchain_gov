@@ -1,4 +1,5 @@
 import { observable, computed, action, decorate } from "mobx";
+import moment from 'moment';
 
 import Milestone from './Milestone';
 import Expenditure from './Expenditure';
@@ -69,9 +70,15 @@ class Project {
 
     get completionGraphData(){
         const data = [];
-        this.milestones.forEach(milestone => {
+        const milestonesSortbyDate = this.milestones.sort((a,b) => 
+        a.completionDate - b.completionDate);
+        let counter = 0;
+        milestonesSortbyDate.forEach(milestone => {
             if(milestone.completionDate){
-               const dataPoint =  {name: 'Jul' ,pv: 6400, amt: 2400};
+                counter++;
+                const date = moment(milestone.completionDate).format('Do MMM');
+                const cp = (counter/this.milestones.length) * 100
+               const dataPoint =  {name: date ,pv: Math.round(cp * 10) / 10 };
                data.push(dataPoint);
             }
         })
