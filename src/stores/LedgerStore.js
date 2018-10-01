@@ -1,8 +1,9 @@
 import { action, decorate } from "mobx";
 const axios = require('axios');
 
-const BASE_URL = 'https://gov-project-chain.herokuapp.com';
-//const BASE_URL = 'http://localhost:3001';
+const BASE_URL = process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:3001' 
+    :'https://gov-project-chain.herokuapp.com';
 const ADD_PROJECT = `${BASE_URL}/addProject`;
 const ADD_EXPENDITURE = `${BASE_URL}/addExpenditure`;
 const ADD_MILESTONE = `${BASE_URL}/addMilestone`;
