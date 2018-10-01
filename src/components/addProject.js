@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import NavBar from './navbar'
 import Footer from './footer'
-import { row, col, table } from 'bootstrap';
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import TodoList from "./todoList";
 import '../styles/main.css';
