@@ -4,7 +4,7 @@ This full stack software was developed as part of the research project -  "Imple
 spending in local governments using blockchain technology" 
 
 ## The stack :
- * blockchain_gov - React.js Font end web application.
+ * <b>blockchain_gov - React.js Font end web application.</b>
  * blockchain_gov_backend - Node.js backend application.
  * blockchain_gov_sc - Truffle project for smart contract development.
 
@@ -15,7 +15,7 @@ Demo App :  [https://blockchain-gov.herokuapp.com/](https://blockchain-gov.herok
 
 How to Runs the app in the development mode.
 
-In the project directory, plesae run:
+In the project directory, please run:
 
 ### `npm install`
 ### `npm start`
