@@ -17,7 +17,9 @@ export class VotingProjects extends Component{
         return(
             <div className = "page-center vote-project">
             <h3 className="homePageTitle"> Vote for a project</h3>
-            <p className="homePageTitle"> Click on the project name to vote</p>
+            <p className="homePageTitle"> {this.props.notSupported 
+                ? 'Voting is disabled as the smart contact is not deployed to a live ethereum network!' 
+                : 'Click on the project name to vote'}</p>
             <hr />
             <table >
                 <tbody>

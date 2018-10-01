@@ -7,11 +7,10 @@ import UpdateProject from './components/updateProject';
 import OverviewAndExpenses from './components/overviewAndExpenses';
 import HowItWorks from './components/howItWorks'
 import CreateProject from './components/createProject'
-import VoteProject from './components/voteProject'
 import News from './components/news'
 import ContactUs from './components/contactUs'
+import VoteProject from './components/voteProject'
 import './App.css';
-import Popper from 'popper.js';
 
 class App extends Component {
   render() {

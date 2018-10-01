@@ -4,7 +4,8 @@ import { VotingProjects } from './votingProjects';
 import NavBar from './navbar'
 import Footer from './footer'
 import '../styles/main.css';
-import '../styles/largescreen.css';
+import '../styles/largescreen.css'
+
 
 class VoteProject extends Component {
 
@@ -17,12 +18,14 @@ class VoteProject extends Component {
   }
 
   handleVoting(project){
-    votingContract.voteForProject(project)
-    let votes=votingContract.totalVotesFor(project).toNumber()
-    this.setState({projects:this.state.projects.map(
-      (el)=>el.name===project? Object.assign({},el,{rating:votes}):el
-    
-    )});
+    if(votingContract){
+      votingContract.voteForProject(project)
+      let votes=votingContract.totalVotesFor(project).toNumber()
+      this.setState({projects:this.state.projects.map(
+        (el)=>el.name===project? Object.assign({},el,{rating:votes}):el
+      
+      )});
+    }
   }
 
   render(){
@@ -41,7 +44,7 @@ class VoteProject extends Component {
                 </div>
           </div>{/* End of Banner */}
           <div className="projects-table">
-          <VotingProjects projects={this.state.projects} vote={this.handleVoting}/>
+          <VotingProjects projects={this.state.projects} vote={this.handleVoting} notSupported={votingContract === undefined}/>
           </div>
           <div>
             <Footer />
