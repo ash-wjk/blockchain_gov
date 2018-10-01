@@ -7,7 +7,7 @@ import UpdateProject from './components/updateProject';
 import OverviewAndExpenses from './components/overviewAndExpenses';
 import HowItWorks from './components/howItWorks'
 import CreateProject from './components/createProject'
-import BidProject from './components/bidProject'
+import VoteProject from './components/voteProject'
 import News from './components/news'
 import ContactUs from './components/contactUs'
 import './App.css';
@@ -27,7 +27,7 @@ class App extends Component {
             <Route path="/overviewAndExpenses" component={OverviewAndExpenses} />
             <Route path="/howItWorks" component={HowItWorks} />
             <Route path="/createProject" component={CreateProject} />
-            <Route path="/bidProject" component={BidProject} />
+            <Route path="/voteProject" component={VoteProject} />
             <Route path="/news" component={News} />
             <Route path="/contactUs" component={ContactUs} />
             </div>

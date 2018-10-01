@@ -30,7 +30,7 @@ return(
             {/* <a class="nav-link" href="#">HOW IT WORKS</a>*/}
           </li>
           <li >
-            <NavLink to="/bidProject">PLACE A BID</NavLink>
+            <NavLink to="/voteProject">VOTE</NavLink>
           </li>
           <li >
             <NavLink to="/howItWorks">HOW IT WORKS</NavLink>

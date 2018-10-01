@@ -17,7 +17,8 @@
     "react-scripts": "1.1.4",
     "recharts": "^1.1.0",
     "resolve-url-loader": "^2.3.0",
-    "segmented-control": "^0.1.9"
+    "segmented-control": "^0.1.9",
+    "web3": "^0.19.0"
   },
   "scripts": {
     "start": "react-scripts start",
