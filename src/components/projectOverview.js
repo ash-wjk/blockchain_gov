@@ -77,12 +77,6 @@ const Overview = ({project}) => (
     </div>{/*end of row 6*/}
   </div>{/*end of row*/}
 
-  <hr/>
-
-  <div className="update-button" >
-      <button class="button" onClick={this.buttonClick}>UPDATE PROJECT STATUS</button>
-  </div>
-
 </div>
 </div>
 );

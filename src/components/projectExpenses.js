@@ -6,7 +6,6 @@ import ExpensePrecentageGraph from './expencePrecentage'
 import ProjectExpensesGraph from './projectExpensesGraph'
 import BalanceGraph from './balanceGraph'
 
-// import '../styles/App.css';
 import '../styles/main.css';
 import '../styles/largescreen.css';
 
@@ -82,12 +81,6 @@ const Expenses = ({project}) => (
         <BalanceGraph />
       </div>
     </div>{/* end of row*/}
-
-    <hr/>
-
-    <div className="update-button" >
-        <button class="button" onClick={this.buttonClick}>UPDATE PROJECT STATUS</button>
-    </div>
     
 </div>{/* end of container*/}
 </div>

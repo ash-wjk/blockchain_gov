@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import { Route } from 'react-router-dom'
 import { SegmentedControl } from 'segmented-control';
-import NavBar from './navbar'
 import Footer from './footer'
 import Overview from './projectOverview'
 import Expenses from './projectExpenses'
@@ -56,7 +56,14 @@ const OverviewAndExpenses = inject(stores => ({
               />
 
             {currentView === 'overview' ? <Overview project={currentProject} /> : <Expenses project={currentProject}/>}
-    
+
+            <hr/>
+
+            <Route render={({history}) => (
+              <div className="update-button" >
+                  <button class="button" onClick={() => history.push('/updateProject')}>UPDATE PROJECT STATUS</button>
+              </div>
+            )} />
           </div>
             <Footer />
         </div>

@@ -1,5 +1,4 @@
-import { observable, computed, action, decorate } from "mobx";
-import Milestone from "../models/Milestone";
+import { action, decorate } from "mobx";
 const axios = require('axios');
 
 const BASE_URL = 'https://gov-project-chain.herokuapp.com'; //'http://localhost:3001';
